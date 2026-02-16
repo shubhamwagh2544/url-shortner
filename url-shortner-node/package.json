@@ -12,6 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "express": "^5.2.1",
-    "mongoose": "^9.2.1"
+    "mongoose": "^9.2.1",
+    "nanoid": "^5.1.6"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6"
   }
 }

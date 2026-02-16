@@ -7,7 +7,7 @@ import Url from "./models/url.js";
 const app = express();
 const PORT = 8001;
 
-connectToMongoDB('mongodb://localhost:27017/short-url')
+connectToMongoDB('mongodb://localhost:27017/url-shortner-node')
     .then(() => {
         console.log('mongodb connected successfully');
     })
