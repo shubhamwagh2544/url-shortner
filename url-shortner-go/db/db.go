@@ -12,8 +12,12 @@ import (
 var Client *mongo.Client
 
 func ConnectToMongoDB(url string) error {
+	if url == "" {
+		url = "mongodb://localhost:27017/url-shortner-go"
+	}
+
 	ctx := context.Background()
-	ctx, cancel := context.WithTimeout(ctx, 10 * time.Second)
+	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
 	defer cancel()
 
 	clientOptions := options.Client().ApplyURI(url).SetMaxPoolSize(20)
@@ -23,6 +27,6 @@ func ConnectToMongoDB(url string) error {
 		return fmt.Errorf("error connecting to mongo: %v", err)
 	}
 	Client = client
-	fmt.Println("mongodb connected succcessfully");
+	fmt.Println("mongodb connected succcessfully")
 	return nil
 }
